@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Nhập số  </label><br>
+    <input id="so" type="text">
+    <button onclick="check()">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+<script>
+    function check(){
+         let check = +document.getElementById("so").value
+         let div = check % 2
+         var result = ""
+         if (div == 0){
+            result = "số "+ check + " là số chẵn"
+         }else{
+            result = "số"+ check + " là số lẻ"
+
+         }
+         document.getElementById("result").innerHTML = result
+
+    }
+    
+</script>
+</html>
