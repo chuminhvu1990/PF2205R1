@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Nhập loại hoa quả</label>
+    <input id="check" type="text">
+    <button onclick="check()">Xem giá</button>
+    <p id="result">Kết quả</p>
+
+</body>
+<script>
+    function check(){
+        let check =document.getElementById("check").value
+        var result = ""
+        switch (check) {
+            case "Ổi":
+                result = "Ổi : 20000 VĐN/Kg"
+                document.getElementById("result").innerHTML = result
+            // alert ("Ổi: 20000VĐN/Kg")
+            break
+            case "Dưa Hấu":
+            alert ("Dưa Hấu: 20000VĐN/Kg")
+            break
+            case "Xoài":
+            alert ("Xoài: 30000VĐN/Kg")
+            break
+            case "Táo":
+            alert ("Táo: 30000VĐN/Kg")
+            break
+            case "Cam":
+            alert ("Cam: 40000VĐN/Kg")
+            break
+            case "Chôm Chôm":
+            alert ("Chôm Chôm: 50000VĐN/Kg")
+            case "Măng Cụt":
+            alert ("Măng Cụt: 50000VĐN/Kg")
+            break
+        }
+        
+    }
+</script>
+</html>
