@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <labe  lfor="">Môn Toán</labe>
+    <input id="toan" type="number"><br>
+    <p></p>
+    <label  for="">Môn Văn</label>
+    <input id="van" type="number"><br>
+    <p></p>
+    <label for="">Môn Anh</label>
+    <input id="anh" type="number"><br>
+    <p></p>
+    <label for="">Khu vực</label>
+    <select name="" id="khuvuc">
+        <option id="kv1" value="kv1">KV1</option>
+        <option id="kv2" value="kv2">KV2</option>
+        <option id="kv3" value="kv3">KV3</option>
+        <option id="kv4" value="kv4">KV4</option>
+    </select><br>
+    <p></p>
+    <button onclick="Tinhdiem()">Tính điểm</button>
+</body>
+<script>
+    function Tinhdiem(){
+        let dtoan = document.getElementById("toan").value
+        let dvan = document.getElementById("van").value
+        let danh = document.getElementById("anh").value
+        let khuvuc = document.getElementById("khuvuc").value
+        let kv1 = +document.getElementById("kv1").value
+        let kv2 = +document.getElementById("kv2").value
+        let kv3 = +document.getElementById("kv3").value
+        let kv4 = +document.getElementById("kv4").value
+        var tongdiem = 0
+        switch (khuvuc) {
+            case "kv1":
+            tongdiem =parseFloat(dtoan) + parseFloat(dvan) + parseFloat(danh) + 0.75
+            alert("tong diem la "+ tongdiem)
+            break
+            case "kv2":
+            tongdiem =parseFloat(dtoan) + parseFloat(dvan) + parseFloat(danh) + 0.5
+            alert("tong diem la "+ tongdiem)
+            break
+            case "kv3":
+            tongdiem =parseFloat(dtoan) + parseFloat(dvan) + parseFloat(danh) + 0.25
+            alert("tong diem la "+ tongdiem)
+            break
+            case "kv4":
+            tongdiem =parseFloat(dtoan) + parseFloat(dvan) + parseFloat(danh) + 0
+            alert("tong diem la "+ tongdiem)
+            break
+        }
+    }
+</script>
+</html>
