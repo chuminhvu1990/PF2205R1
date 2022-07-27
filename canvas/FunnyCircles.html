@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    
+<body>
+    <button onclick="clearInterval(myCircle)" style="position: fixed;">Top</button>
+    <canvas id="myCanvas" width="1000px" height="500px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        function Circle(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+        function createCircle(){
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            var circle = new Circle(500, 500, 80);
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y ,circle.radius, 0, 2*Math.PI);
+            ctx.fill();
+        }
+        function createCircle() {
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            var radius = Math.floor(Math.random() * 80);
+            var circle = new Circle(500, 500, radius);
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        function createCircle(){
+            let radius = Math.floor(Math.random()*80);
+            let color = getRandomColor();
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            let circle = new Circle(x,y,radius);
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+            return circle;
+        }
+
+
+        function getRandomHex(){
+            return Math.floor(Math.random()*255);
+        }
+        function getRandomColor(){
+            let red = getRandomHex();
+            let green = getRandomHex();
+            let blue =getRandomHex();
+                return "rgb("+red+","+blue+","+green+")";
+        }
+        function createMultipleCircle(){
+		    for(let i = 0; i < 30; i++){
+    	   createCircle();
+            }
+        }
+        let myCircle = setInterval(() => {
+            createMultipleCircle()
+        },1000)
+        let yDistance = 1;
+        function moveCircle(circle){
+            ctx.clearRect(circle.x,circle.y,160,160);
+
+            let isTouchTop = circle.x <= 0 ;
+            let isTouchBottom = circle.y + 2*circle.radius > gameBottomPosition;
+            if( isTouchTop || isTouchBottom) {
+                yDistance = -yDistance;
+            }
+            carYposition += yDistance; 
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+        
+        let circleArray = createMultipleCircle();
+        console.log(circleArray);
+       
+ 
+
+    </script>
+</body>
+
+</html>

@@ -8,31 +8,15 @@
 </head>
 <body>
     <script>
-        // let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus"];
-        // let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" ,"Leo"]
-        // let nameOfStar = prompt("Enter a name of star: ");
-        // function findStarName(name){
-        //     let fullName = "";
-        //     for(let i = 0; i<7; i++){
-        //         if(name == arr1[i]){
-        //             fullName = arr1[i] +" "+arr2[i];
-        //             return fullName;
-        //         }
-        //     }
-        //     fullName = "This name is not found!";
-        //     return fullName;
-        // }  alert(findStarName(nameOfStar));
-        // factorial
-        function Factorial(x){
-            if(x == 0)
-                return 0;
-            else{
-                    let result = 1
-                    return result = x*Factorial(x-1);
-                }
+       
+       function func1(a){
+        debugger
+        if(a == 2)
+        return 2;
+        return a * func1(a - 1);
         }
-        document.write(Factorial(5)) ;
-
+        
+        document.write(func1(5))
     </script>
 </body>
 </html>
