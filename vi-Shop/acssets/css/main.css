@@ -459,14 +459,26 @@
     margin-left: auto;
     margin-right: auto;
 }
+.list-product {
+    display: flex;
+}
 .cart-list-img {
-    width: 60%;
+   width: 100px;
+   height: 50px;
     display: none;
+}
+#list-img1 {
+    list-style: none;
+    max-width: 75px;
+}
+.cart-list-img.product__img {
+    background-size: cover;
 }
 .cart-list-msg {
     display: none;
-    font-size: 1.4rem;
-    margin-top: 12px;
+    font-size: 1.1rem;
+    /* margin-top: 12px; */
+    line-height: 80px;
 }
 .header__cart-notice {
     position: absolute;

@@ -201,10 +201,14 @@
                             <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
                             <span class="header__cart-notice " id="count-item" data-count="0"></span>
                             <!-- no cart list-no-cart -->
+                            
                             <div class="header__cart-list list-no-cart " >
-                               
-                                <img class="cart-list-img" src="acssets/img/no-cart (1).png" alt="">
-                                <span id="list-title" class="cart-list-msg">Chưa có sản phẩm</span>
+                               <div id="list-product" class="list-product">
+                                <li id="list-img1">
+                                </li>
+                                   <!-- <img  class="cart-list-img" src="acssets/img/no-cart (1).png" alt=""> -->
+                                <li id="list-title" class="cart-list-msg"></li>
+                               </div>
                                 
                             </div>
                         </div>
@@ -218,13 +222,13 @@
                 <div class="row container-content thumbai">
                     <div class="col l-6 m-6 c-12">
                         <div class="product__img">
-                            <img  src="acssets/img/vesa.jfif" alt="">
+                            <img id="img1" src="acssets/img/vesa.jfif" alt="">
                         </div>
                         
                     </div>
                     <div class="col l-6 m-6 c-12">
                         <div class="product__info">
-                            <div class="product__header">
+                            <div id="product__header" class="product__header">
                                 <span id="product-title" >Nước Hoa Nam Versace Pour Homme 100ml</span>
                             </div>
                            <div class="rank">
@@ -847,9 +851,19 @@
                     carts.find('#count-item').text(citem).data('count',citem);
                 },1000);
             },500);
-            var product_title = document.getElementById("product-title").value
-            document.getElementById("list-title").innerHTML=product_title
+            
+            const div= document.createElement('div')
+            const content = document.createTextNode("Nước Hoa Nam Versace Pour Homme 100ml")
+            div.appendChild(content)
+            document.getElementById("list-title").appendChild(div)
 
+            const image = document.createElement('img')
+            image.width=75
+            image.height=75
+            image.src  = document.getElementById("img1").src
+            document.getElementById("list-img1").appendChild(image)
+            document.querySelector('.cart-list-img').style.display="none"
+           
         });
     </script>
      <!-- js đăng nhập Admin -->
@@ -868,9 +882,7 @@
             }
             arrayUser.push(user)
             arrayUser.push(user1)
-        
             console.log(arrayUser)
-
         }
         function dangnhap() {
             Login.classList.remove('open1')
@@ -896,7 +908,6 @@
             }
             
         }
-       
     </script>
 </body>
 </html>
