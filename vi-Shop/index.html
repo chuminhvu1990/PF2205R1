@@ -365,6 +365,11 @@
                                     </a>  
                                     <a class="product-item__like product-item__like--liked  ">
                                         <i class=" like-icon-fill fas fa-heart like-js  "></i>
+                                        <i class="fa-regular fa-rectangle-xmark  delete"></i>
+
+                                    </a>
+                                    <a href="">
+                                        <!-- <i class="fa-regular fa-rectangle-xmark close-btn"></i> -->
                                     </a>
                                 </div>
                                 <div class="col l-2-4 m-4 c-6 column">
@@ -1393,8 +1398,9 @@
        
     </script>
     <!-- end admin -->
-    <!-- thêm sản phẩm -->
+
     <script>
+            // <!-- thêm sản phẩm -->
         var add = document.querySelector(".addproduct")
         add.addEventListener('click',function(){
            var productName = prompt("productname: ")
@@ -1406,6 +1412,11 @@
            document.getElementById("old").innerHTML = priceOld
            document.getElementById("curent").innerHTML = priceCurent
            
+        })
+        // xóa sp
+        var delete1 = document.querySelector(".delete")
+        delete1.addEventListener('click',function(){
+
         })
     </script>
 </html>

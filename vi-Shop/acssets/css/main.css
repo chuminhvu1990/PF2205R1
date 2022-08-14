@@ -1018,6 +1018,18 @@
     padding-left: 10px;
     
 }
+.delete {
+    position: absolute;
+    font-size: large;
+    top: 0;
+    color: var(--primary);
+    margin-top: 268px;
+    margin-right: 30px;
+    cursor: pointer;
+    left: 44px;
+    border-radius: 3px;
+
+}
 
 .product__header {
     font-size: 1.7rem;
